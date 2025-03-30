@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: test
+  application:
+    name: chatroom
+  datasource:
+    url: jdbc:mysql://${chatroom.mysql.host}:${chatroom.mysql.port}/${chatroom.mysql.db}
+    username: ${chatroom.mysql.username}
+    password: ${chatroom.mysql.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: ${chatroom.redis.host}
+    port: ${chatroom.redis.port}
+    # 使用的数据库索引 ， 默认是0
+    database: 0
+    # 链接超时时间
+    timeout: 1800000
+    password: ${chatroom.redis.password}
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
